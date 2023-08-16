@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 {
 	struct person p;
 
-	strcpy(p.name, "Pedro");
+	strncpy(p.name, "Pedro", MAX_NAME_LENGTH);
 	p.age = 31;
 	
 	printf("Hello, I am %s and I am %d \n", p.name, p.age);
