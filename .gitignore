@@ -1,0 +1,10 @@
+
+# IDEs
+*.swp
+.vscode
+
+# Build Artifacts
+*.elf
+*.o
+*.a
+*.exe
