@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "person.h"
+
+#define MAX_NAME_LENGTH 64
+
+struct person
+{
+	char name[MAX_NAME_LENGTH];
+	int age;
+};
+
+struct person *person_create(const char *name, int age)
+{
+	struct person *p = NULL;
+
+	p = malloc(sizeof(struct person));
+	if (p == NULL) {
+		exit(1);
+	}
+
+	strncpy(p->name, name, MAX_NAME_LENGTH);
+	p->age = age;
+
+	return (p);
+}
+
+void person_destroy(struct person *p)
+{
+	free(p);
+}
+
+void person_print(struct person *p)
+{
+	printf("Hello, I am %s and I am %d \n", p->name, p->age);
+}
+
